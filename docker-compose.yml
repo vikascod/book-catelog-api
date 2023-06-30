@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8000:8000
+    image: app:book_catelog_api
+    volumes:
+      - ./app:/app
+    container_name: book_catelog_api
+    command: sh -c "uvicorn app.main:app --reload"
