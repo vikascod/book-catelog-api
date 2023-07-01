@@ -4,12 +4,14 @@ from jose import JWTError, jwt
 from fastapi.security import OAuth2PasswordBearer
 from app import schemas, database, models
 from sqlalchemy.orm import Session
-# from decouple import config
+import os
+from dotenv import load_dotenv
+
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")
 
-SECRET_KEY = '094faa6ca2556c818166b7a9563b93f7099f6f0f4caa6cf63b88e8d3e'
-ALGORITHM = 'HS256'
+SECRET_KEY = os.environ.get('SECRET_KEY', '094faa6ca2556c818166b7a9563b93f7099f6f0f4caa6cf63b88e8d3e')
+ALGORITHM = os.environ.get('ALGORITHM', 'HS256')
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
 

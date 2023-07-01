@@ -1,12 +1,13 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
-# from decouple import config
+import os
+from dotenv import load_dotenv
 
-# POSTGRES_DB = config('DB_NAME')
-# POSTGRES_USER = config('DB_USER')
-# POSTGRES_PASSWORD = config('DB_PASSWORD')
-# POSTGRES_HOST = config('DB_HOST')
+# POSTGRES_DB = os.environ.get('DB_NAME')
+# POSTGRES_USER = os.environ.get('DB_USER')
+# POSTGRES_PASSWORD = os.environ.get('DB_PASSWORD')
+# POSTGRES_HOST = os.environ.get('DB_HOST')
 
 # URL = f'postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_HOST}/{POSTGRES_DB}'
 URL = 'sqlite:///book_catelog.db'
